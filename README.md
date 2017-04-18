@@ -1,2 +1,2 @@
 # EventApp
-Repository for eventapp
+Repository for Eventapp's python skeleton.
