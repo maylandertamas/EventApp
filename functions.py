@@ -28,3 +28,11 @@ def join_event(data):
 
 def delete_event(data):
     pass
+
+
+def edit_event(data):
+    pass
+
+
+def quit_event(data):
+    pass
