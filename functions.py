@@ -4,13 +4,17 @@ import ui
 import file_functions
 
 
-# check if username already exits or not, if not: create reg in database.
-def user_reg(database): 
+# e-mail, name, password
+def user_reg(database):
     pass
 
 
-# checks if username and password are correct or in database.
+# e-mail, password, return with e-mail
 def user_login(database):
+    pass
+
+
+def show_random_events(database):
     pass
 
 
