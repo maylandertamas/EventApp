@@ -29,8 +29,8 @@ def generate_random_eventID(database):
         return generated
 
 
-def show_events(id, database):
-    #find events in database by id
+def show_events(email, database):
+    #find events in database by email
     #return new event list
     pass
 
