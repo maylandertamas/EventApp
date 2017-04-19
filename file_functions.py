@@ -1,5 +1,6 @@
-# functions to read or write datas in file
+# Tomi
 
+# functions to read or write datas in file
 
 # write new lines or change datas in the file
 def write_to_file(file_name, table):

@@ -37,12 +37,12 @@ def start():
             raise KeyError("There is no such option.")
 
 
-def create_event(data):
+def create_event(data): # Andi
     pass
 
-def delete_event():
+def delete_event(): # Gabi
     pass
 
 
-def edit_event():
+def edit_event(): # Tomi
     pass

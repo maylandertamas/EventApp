@@ -5,12 +5,12 @@ import file_functions
 
 
 # e-mail, name, password
-def user_reg(database):
+def user_reg(database): # Peti
     pass
 
 
 # e-mail, password, return with e-mail
-def user_login(database):
+def user_login(database): # Peti
     pass
 
 
@@ -29,22 +29,22 @@ def generate_random_eventID(database):
         return generated
 
 
-def show_events(email, database):
+def show_events_by_user(email, database): # Tomi
     #find events in database by email
     #return new event list
     pass
 
 
-def show_random_events(database):
+def show_random_events(database): # Gabi
     pass
 
 
-def search(paramater, database):
+def search(paramater, database): # Andi
     #search in database by paramater
     #return new event list
     pass
 
 
-def join_event(data):
+def join_event(data): # White
     #join event by ID
     pass

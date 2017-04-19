@@ -26,5 +26,5 @@ def start():
             raise KeyError("There is no such option.")
 
 
-def quit_event(data):
+def quit_event(data): # White
     pass
