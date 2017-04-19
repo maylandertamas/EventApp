@@ -8,11 +8,9 @@ def start():
         #functions.show_events(email, event_table)
 
         options = ["Search",
-                   "Create",
-                   "Delete",
-                   "Edit"]
+                   "Quit event"]
 
-        ui.print_menu("My Events Menu", options, "Exit to Main Menu")
+        ui.print_menu("Joined Event's Menu", options, "Exit to Main Menu")
 
         inputs = ui.get_inputs("Please enter a number:", "")
         option = inputs[0]
@@ -20,14 +18,7 @@ def start():
             #functions.search()
             pass
         elif option == "2":
-            #event_table = create_event
-            pass
-        elif option == "3":
-            #delete_event()
-            pass
-        elif option == "4":
-            #table = edit_event(event_table, ui.get_inputs("Please give me an ID to update table element: ",
-                                                #"Update line in table"))
+            #quit_event()
             pass  
         elif option == "0":
             main.main()
