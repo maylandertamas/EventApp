@@ -14,6 +14,25 @@ def user_login(database):
     pass
 
 
+def generate_random_eventID(database):
+    lower_case_chars = string.ascii_lowercase
+    numbers = "0123456789"
+    generated = ''
+    generated_list = list(generated)
+    generated_list = [random.choice(lower_case_chars), "H", random.choice(numbers),
+                      random.choice(numbers), "J", random.choice(lower_case_chars), "#&"]
+    generated = "".join(generated_list)
+
+    while generated in table:
+        generate_random(table)
+    else:
+        return generated
+
+
+def show_events(email, database):
+    pass
+
+
 def show_random_events(database):
     pass
 
@@ -27,16 +46,4 @@ def search(data):
 
 
 def join_event(data):
-    pass
-
-
-def delete_event(data):
-    pass
-
-
-def edit_event(data):
-    pass
-
-
-def quit_event(data):
     pass
