@@ -2,7 +2,7 @@
 
 
 # write new lines or change datas in the file
-def write_to_file(file_name):
+def write_to_file(file_name, table):
     with open(file_name, "w") as file:
         for record in table:
             row = ';'.join(record)
