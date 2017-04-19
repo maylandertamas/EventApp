@@ -2,6 +2,8 @@
 # functions to get or change datga in files
 import ui
 import file_functions
+import random
+from datetime import datetime
 
 
 # e-mail, name, password
@@ -35,8 +37,16 @@ def show_events_by_user(email, database): # Tomi
     pass
 
 
-def show_random_events(database): # Gabi
-    pass
+def show_random_events(): # Gabi 2017-09-16-5:00
+    temp_event_list = []
+    events = file_functions.read_from_file("Eventinfo.csv")
+    present = datetime.now()
+    #datetime_object = datetime.strptime(events[0][5], '%Y-%m-%d-%H:%M')
+    for i in range(4):
+        temp_event = random.choice(events)
+        if temp_event not in temp_event_list and present < datetime.strptime(temp_event[5], '%Y-%m-%d-%H:%M'):
+            temp_event_list.append(temp_event)
+    print(temp_event_list)
 
 
 def search(paramater, database): # Andi
