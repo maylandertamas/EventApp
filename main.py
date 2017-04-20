@@ -55,7 +55,7 @@ def starting_screen_optionlist():
 
 # list of strings, for menu print in ui.py
 def menu_optionlist():
-    options = ["Show created events",
+    options = ["My events",
                "Show events I joined",
                "Search Event",
                "Show new random events",
@@ -70,7 +70,6 @@ def main():
         starting_screen_optionlist()
         try:
             email = starting_screen()
-            print(email)
         except KeyError as err:
             ui.print_error_message(err)
     while True:
