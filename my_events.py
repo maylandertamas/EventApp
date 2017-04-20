@@ -47,7 +47,7 @@ def create_event(): # Andi
         for title in TITLE_LIST_FOR_CREATE:
             new_list.append(ui.get_inputs("Give me {0}:".format(title)))
     new_list.insert(7, "")
-    file_functions.write_to_file("Eventinfo.csv", new_list)
+    #file_functions.write_to_file("Eventinfo.csv", new_list)
 
 def delete_event(): # Gabi
     pass

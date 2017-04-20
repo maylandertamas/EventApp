@@ -17,7 +17,8 @@ def starting_screen():
     inputs = ui.get_inputs("Please enter a number: ", "")
     option = inputs[0]
     if option == "1":
-        functions.user_reg()
+        user_database = file_functions.read_from_file("Userinfo.csv", "user")
+        functions.user_reg(user_database)
     elif option == "2":
         user_database = file_functions.read_from_file("Userinfo.csv", "user")
         email = functions.user_login(user_database)
@@ -66,14 +67,17 @@ def menu_optionlist():
 # menu structure in a while loop until user quit
 def main():
     email = ""
-    """
     while email is "":
-        starting_screen_optionlist()
-        try:
-            email = starting_screen()
-        except KeyError as err:
-            ui.print_error_message(err)
-    """
+        login_screen = True
+        email = None
+        while login_screen is True:
+            starting_screen_optionlist()
+            try:
+                email = starting_screen()
+                if email is not None:
+                    login_screen = False
+            except KeyError as err:
+                ui.print_error_message(err)
     while True:
         menu_optionlist()
         try:
