@@ -8,7 +8,7 @@ def start():
     while True:
         event_table = file_functions.read_from_file("Eventinfo.csv", "event")
         user_table = file_functions.read_from_file("Userinfo.csv", "user")
-        ui.print_result(functions.show_events_by_user("test@test.com", "my", event_table), "Your Events:")
+        ui.print_result(functions.show_events_by_user("test@test.com", "my", event_table))
         options = ["Search",
                    "Create",
                    "Delete",
