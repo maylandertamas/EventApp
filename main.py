@@ -56,7 +56,7 @@ def starting_screen_optionlist():
 
 # list of strings, for menu print in ui.py
 def menu_optionlist():
-    options = ["Show created events",
+    options = ["My events",
                "Show events I joined",
                "Search Event",
                "Show new random events",
