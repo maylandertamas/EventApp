@@ -2,6 +2,9 @@
 # functions to get or change datga in files
 import ui
 import file_functions
+import random
+from datetime import datetime
+
 CREATOR_INDEX = 8
 PARTICIPANT_INDEX = 7
 
@@ -48,8 +51,16 @@ def show_events_by_user(email, show_type, database):
 
 
 
-def show_random_events(database): # Gabi
-    pass
+def show_random_events(): # Gabi 2017-09-16-5:00
+    temp_event_list = []
+    events = file_functions.read_from_file("Eventinfo.csv")
+    present = datetime.now()
+    #datetime_object = datetime.strptime(events[0][5], '%Y-%m-%d-%H:%M')
+    for i in range(4):
+        temp_event = random.choice(events)
+        if temp_event not in temp_event_list and present < str_to_date(temp_event[5]):
+            temp_event_list.append(temp_event)
+    ui.print_result(temp_event_list)
 
 
 def search(paramater, database): # Andi
@@ -61,3 +72,7 @@ def search(paramater, database): # Andi
 def join_event(data): # White
     #join event by ID
     pass
+
+
+def str_to_date(string):
+    return datetime.strptime(string, '%Y-%m-%d-%H:%M')
