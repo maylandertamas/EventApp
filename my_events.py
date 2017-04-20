@@ -4,6 +4,8 @@ import functions
 import ui
 import main
 
+TITLE_LIST_FOR_CREATE = ["ID", "Name", "Description","Place","Starting", "Ending", "Type", "Creator"]
+
 def start():
     while True:
         event_table = file_functions.read_from_file("Eventinfo.csv", "event")
@@ -37,8 +39,15 @@ def start():
             raise KeyError("There is no such option.")
 
 
-def create_event(data): # Andi
-    pass
+def create_event(): # Andi
+    Id = functions.generate_random_eventID(file_functions.read_from_file)
+    new_list = []
+    new_list.append(Id)
+    while len(new_list) < len(TITLE_LIST_FOR_CREATE)-1:
+        for title in TITLE_LIST_FOR_CREATE:
+            new_list.append(ui.get_inputs("Give me {0}:".format(title)))
+    new_list.insert(7, "")
+    file_functions.write_to_file("Eventinfo.csv", new_list)
 
 def delete_event(): # Gabi
     pass

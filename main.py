@@ -66,12 +66,14 @@ def menu_optionlist():
 # menu structure in a while loop until user quit
 def main():
     email = ""
+    """
     while email is "":
         starting_screen_optionlist()
         try:
             email = starting_screen()
         except KeyError as err:
             ui.print_error_message(err)
+    """
     while True:
         menu_optionlist()
         try:

@@ -3,6 +3,7 @@
 import ui
 import file_functions
 import random
+from string import ascii_lowercase
 from datetime import datetime
 
 CREATOR_INDEX = 8
@@ -32,7 +33,7 @@ def user_login(database):
 
 
 def generate_random_eventID(database):
-    lower_case_chars = string.ascii_lowercase
+    lower_case_chars = ascii_lowercase
     numbers = "0123456789"
     generated = ''
     generated_list = list(generated)
@@ -40,8 +41,8 @@ def generate_random_eventID(database):
                       random.choice(numbers), "J", random.choice(lower_case_chars), "#&"]
     generated = "".join(generated_list)
 
-    while generated in table:
-        generate_random(table)
+    while generated in database:
+        generate_random_eventID(database)
     else:
         return generated
 
