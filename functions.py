@@ -26,7 +26,7 @@ def user_login(database):
         if database[i][E_MAIL_INDEX] == email:
             for i in range(len(database)):
                 if database[i][PASSWORD_INDEX] == password:
-                    print("Succesfully logged in madafaka")
+                    print("Succesfully logged in.")
                     return email
     print("Wrong e-mail adress, or password.")
 

@@ -19,8 +19,9 @@ def starting_screen():
     if option == "1":
         functions.user_reg()
     elif option == "2":
-        user_database = file_functions.read_from_file("Userinfo.csv")
-        functions.user_login(user_database)
+        user_database = file_functions.read_from_file("Userinfo.csv", "user")
+        email = functions.user_login(user_database)
+        return email
     elif option == "3":
         sys.exit(0)
     else:
@@ -63,18 +64,15 @@ def menu_optionlist():
 
 
 # menu structure in a while loop until user quit
-
-
-def pre_main():
-    while True:
+def main():
+    email = ""
+    while email is "":
         starting_screen_optionlist()
         try:
-            starting_screen()
+            email = starting_screen()
+            print(email)
         except KeyError as err:
             ui.print_error_message(err)
-
-
-def main():
     while True:
         menu_optionlist()
         try:
@@ -84,4 +82,4 @@ def main():
 
 
 if __name__ == '__main__':
-    pre_main()
+    main()
