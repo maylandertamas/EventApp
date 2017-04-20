@@ -9,13 +9,26 @@ CREATOR_INDEX = 8
 PARTICIPANT_INDEX = 7
 
 # e-mail, name, password
-def user_reg(database): # Peti
+def user_reg(database):
     pass
 
 
 # e-mail, password, return with e-mail
-def user_login(database): # Peti
-    pass
+def user_login(database):
+    print(database)
+    E_MAIL_INDEX = 0
+    PASSWORD_INDEX = 2
+    email = ui.get_inputs("Please enter your e-mail adress: ", "")
+    print(email)
+    password = ui.get_inputs("Please enter your password: ", "")
+    print(password)
+    for i in range(len(database)):
+        if database[i][E_MAIL_INDEX] == email:
+            for i in range(len(database)):
+                if database[i][PASSWORD_INDEX] == password:
+                    print("Succesfully logged in madafaka")
+                    return email
+    print("Wrong e-mail adress, or password.")
 
 
 def generate_random_eventID(database):
