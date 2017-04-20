@@ -44,9 +44,9 @@ def show_random_events(): # Gabi 2017-09-16-5:00
     #datetime_object = datetime.strptime(events[0][5], '%Y-%m-%d-%H:%M')
     for i in range(4):
         temp_event = random.choice(events)
-        if temp_event not in temp_event_list and present < datetime.strptime(temp_event[5], '%Y-%m-%d-%H:%M'):
+        if temp_event not in temp_event_list and present < str_to_date(temp_event[5]):
             temp_event_list.append(temp_event)
-    print(temp_event_list)
+    ui.print_result(temp_event_list)
 
 
 def search(paramater, database): # Andi
@@ -58,3 +58,7 @@ def search(paramater, database): # Andi
 def join_event(data): # White
     #join event by ID
     pass
+
+
+def str_to_date(string):
+    return datetime.strptime(string, '%Y-%m-%d-%H:%M')
