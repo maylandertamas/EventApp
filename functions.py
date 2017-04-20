@@ -10,18 +10,22 @@ PARTICIPANT_INDEX = 7
 
 # e-mail, name, password
 def user_reg(database):
-    pass
-
+    reg_email = ui.get_inputs("Enter your e-mail adress: ", "")
+    for i in range(len(database)):
+        if reg_email == database[i][0]:
+            print("This email adress is already registered.")
+            return
+    reg_name = ui.get_inputs("Enter your name: ", "")
+    reg_password = ui.get_inputs("Enter a password: ", "")
+    database.append([reg_email, reg_name, reg_password])
+    file_functions.write_to_file("Userinfo.csv", database)
 
 # e-mail, password, return with e-mail
 def user_login(database):
-    print(database)
     E_MAIL_INDEX = 0
     PASSWORD_INDEX = 2
     email = ui.get_inputs("Please enter your e-mail adress: ", "")
-    print(email)
     password = ui.get_inputs("Please enter your password: ", "")
-    print(password)
     for i in range(len(database)):
         if database[i][E_MAIL_INDEX] == email:
             for i in range(len(database)):
