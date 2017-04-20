@@ -79,7 +79,14 @@ def show_random_events(): # Gabi 2017-09-16-5:00
 def search(paramater, database): # Andi
     #search in database by paramater
     #return new event list
-    pass
+    events = file_functions.read_from_file("Eventinfo.csv")
+    present = datetime.now()
+    search_list = []
+    parameter = input("Please enter a tag to search: ")
+    for line in table:
+        if parameter in line and present < str_to_date(event[5]):
+            search_list.append(line)
+    ui.print_result(search_list)
 
 
 def join_event(data): # White
