@@ -1,14 +1,14 @@
 # functions for my_events menu point
 import file_functions
+import functions
 import ui
 import main
 
 def start():
     while True:
-        event_table = file_functions.read_from_file("Eventinfo.csv")
-        user_table = file_functions.read_from_file("Userinfo.csv")
-        #functions.show_events(userid, event_table)
-
+        event_table = file_functions.read_from_file("Eventinfo.csv", "event")
+        user_table = file_functions.read_from_file("Userinfo.csv", "user")
+        ui.print_result(functions.show_events_by_user("test@test.com", "my", event_table), "Your Events:")
         options = ["Search",
                    "Create",
                    "Delete",

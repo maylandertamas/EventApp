@@ -11,8 +11,13 @@ def write_to_file(file_name, table):
 
 
 # maybe make a list from the datas in file?
-def read_from_file(file_name):
+def read_from_file(file_name, file_type):
     with open(file_name, "r") as file:
         lines = file.readlines()
     table = [element.replace("\n", "").split(";") for element in lines]
-    return table
+    if file_type == "event":
+        for item in table:
+            item[7] = item[7].split(',')
+        return table
+    elif file_type == "user":
+        return table
